@@ -4,7 +4,28 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('royal-master.index.');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+});
+Route::get('/about', function () {
+    return view('royal-master.about');
+});
+Route::get('/accomodation', function () {
+    return view('royal-master.accomodation');
+});
+Route::get('/gallery', function () {
+    return view('royal-master.gallery');
+});
+Route::get('/blog', function () {
+    return view('royal-master.blog');
+});
+Route::get('/blog-single', function () {
+    return view('royal-master.blog-single');
+});
+Route::get('/elements', function () {
+    return view('royal-master.elements');
+});
+Route::get('/contact', function () {
+    return view('royal-master.contact');
 });
 
 Route::get('/dashboard', function () {
