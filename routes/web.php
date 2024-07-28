@@ -27,6 +27,9 @@ Route::get('/elements', function () {
 Route::get('/contact', function () {
     return view('royal-master.contact');
 });
+Route::get('/admin', function () {
+    return view('royal-master.Admin.index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

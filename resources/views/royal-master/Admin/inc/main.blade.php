@@ -1,0 +1,5 @@
+@include('royal-master.admin.inc.header')
+@include('royal-master.admin.inc.aside')
+@include('royal-master.admin.inc.nav')
+@yield('container')
+@include('royal-master.admin.inc.footer')
