@@ -25,6 +25,9 @@
                     </li> 
                     <li class="nav-item"><a class="nav-link" href="/elements">Elemests</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item d-flex align-items-center"><a  class=" rounded-3  btn btn-primary " role="button" href="/login">Log in</a></li>
+                    <li class="nav-item d-flex align-items-center"><a class="rounded-3 btn btn-primary " role="button" href="/register">Sign up</a></li>
+                    
                 </ul>
             </div> 
         </nav>
