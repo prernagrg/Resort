@@ -2,7 +2,7 @@
   <div class="app-brand demo">
     <a href="index.html" class="app-brand-link">
       <span class="app-brand-logo demo">
-        <svg
+        {{-- <svg
           width="25"
           viewBox="0 0 25 42"
           version="1.1"
@@ -54,9 +54,9 @@
               </g>
             </g>
           </g>
-        </svg>
+        </svg> --}}
       </span>
-      <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+      <span class=" demo menu-text fw-bolder ms-2">Resort Management System</span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -69,7 +69,7 @@
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item active">
-      <a href="index.html" class="menu-link">
+      <a href="/admin" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
       </a>
