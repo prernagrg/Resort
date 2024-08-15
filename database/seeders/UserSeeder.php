@@ -17,11 +17,13 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name'=>'user',
             'email'=>'user@gmail.com',
+            'phone'=>'665465465',
             'password'=>'user12345'
         ]);
         Admin::factory()->create([
             'name'=>'admin',
             'email'=>'admin@gmail.com',
+            'phone'=>'665465465',
             'password'=>'admin12345'
         ]);
     }

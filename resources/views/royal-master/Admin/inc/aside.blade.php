@@ -67,7 +67,7 @@
   <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner py-1">
-    <!-- Dashboard -->
+    {{-- <!-- Dashboard -->
     <li class="menu-item active">
       <a href="/admin" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -109,32 +109,49 @@
           </a>
         </li>
       </ul>
-    </li>
+    </li> --}}
 
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">File</span>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-dock-top"></i>
+        <div data-i18n="Account Settings">Image File</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="/admin/file/create" class="menu-link">
+            <div data-i18n="Account">Add Image</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="{{route('file.index')}}" class="menu-link">
+            <div data-i18n="Notifications">Manage Image</div>
+          </a>
+        </li>
+
+      </ul>
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Pages</span>
     </li>
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
-        <div data-i18n="Account Settings">Account Settings</div>
+        <div data-i18n="Account Settings">Hotel Rooms</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="pages-account-settings-account.html" class="menu-link">
-            <div data-i18n="Account">Account</div>
+          <a href="/admin/create_room" class="menu-link">
+            <div data-i18n="Account">Add Rooms</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="pages-account-settings-notifications.html" class="menu-link">
-            <div data-i18n="Notifications">Notifications</div>
+          <a href="/admin/manage_room" class="menu-link">
+            <div data-i18n="Notifications">Manage Rooms</div>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="pages-account-settings-connections.html" class="menu-link">
-            <div data-i18n="Connections">Connections</div>
-          </a>
-        </li>
+
       </ul>
     </li>
     <li class="menu-item">
@@ -178,7 +195,7 @@
         </li>
       </ul>
     </li>
-    <!-- Components -->
+    {{-- <!-- Components -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
     <!-- Cards -->
     <li class="menu-item">
@@ -386,6 +403,6 @@
         <i class="menu-icon tf-icons bx bx-file"></i>
         <div data-i18n="Documentation">Documentation</div>
       </a>
-    </li>
+    </li> --}}
   </ul>
 </aside>
