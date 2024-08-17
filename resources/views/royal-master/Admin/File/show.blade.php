@@ -15,7 +15,7 @@
         <div class="mb-3 d-flex flex-column">
             <img src="{{asset('uploads/'.$files->image)}}" height="100px" width="100px" alt="">
         </div>
-        
+
     </form>
 </div>
 @endsection

@@ -142,12 +142,12 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="/admin/create_room" class="menu-link">
+          <a href="/admin/room/create" class="menu-link">
             <div data-i18n="Account">Add Rooms</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="/admin/manage_room" class="menu-link">
+          <a href="/admin/index" class="menu-link">
             <div data-i18n="Notifications">Manage Rooms</div>
           </a>
         </li>
