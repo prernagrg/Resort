@@ -28,6 +28,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     // Route::get('/create_room', [RoomController::class, 'create'])->name('create_room');
     // Route::post('/create_room', [RoomController::class, 'store'])->name('store_room');
        route::resource('/file', FileController::class);
+       route::resource('/room', RoomController::class);
     Route::post('logout', [LoginSessionController::class, 'destroy'])
                 ->name('adminlogout');
 });

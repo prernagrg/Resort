@@ -1,7 +1,7 @@
 @extends('royal-master.admin.inc.main')
 @section('container')
     <div style="width:80%" class="container bg-dark px-5 pb-5 m-5  shadow ">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{route('room.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="d-flex justify-content-between pb-3 mb-5 border-bottom">
                 <h2 class="text-white">Add Room Section <span
@@ -56,16 +56,16 @@
                                             outline: 3px solid blue;
                                         }
                                     </style>
-                                    {{-- @foreach ($files as $file)
+                                    @foreach ($files as $file)
                                         <label>
                                             <input type="radio" style="opacity: 0" name="imgname"
                                                 value="{{ $file->image }}">
                                             <img height="100px" width="100px" name="imgname"
                                                 src="{{ asset('uploads/' . $file->image) }}" alt="">
                                         </label>
-                                    @endforeach --}}
+                                    @endforeach
                                 </div>
-                                {{-- {{ $files->links() }} --}}
+                                {{ $files->links() }}
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary" onclick="moveimg()"
@@ -101,7 +101,7 @@
                 <div class="col-lg-6">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox"
-                            value="<i class='fa-regular fa-snowflake'></i> Air Conditioner" name='airCondition'
+                            value="<i class='fa-regular fa-snowflake'></i> Air Conditioner" name='ac'
                             id="" />
                         <label class="form-check-label" for="">Air Conditioner</label>
                     </div>
@@ -171,7 +171,7 @@
                         <label class="form-check-label" for="">Living Space</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Fruit Basket" name='fruitBasket'
+                        <input class="form-check-input" type="checkbox" value="Fruit Basket" name='fruit'
                             id="" />
                         <label class="form-check-label" for="">Fruit Basket</label>
                     </div>
