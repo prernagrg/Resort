@@ -1,6 +1,20 @@
 @extends('royal-master.admin.inc.main')
 @section('container')
-    <div style="width:80%" class="container bg-dark px-5 pb-5 m-5  shadow ">
+
+
+<div style="width:80%" class="container bg-dark px-5 pb-5 m-5  shadow ">
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert"> <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>{{ session('success') }}</strong>
+        </div>
+        @endif
+        @if (session('error'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert"> <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>{{ session('error') }}</strong>
+        </div>
+        @endif
         <form action="{{route('room.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="d-flex justify-content-between pb-3 mb-5 border-bottom">
@@ -15,7 +29,7 @@
 
             <div class="mb-3">
                 <label for="" class="form-label text-white">Room Type</label>
-                <select  class="form-select form-select-lg" name="roomType" id="">
+                <select  class="form-select form-select-lg" name="roomtype" id="">
                     <option selected>Select one</option>
                     <option value="Presidential Suit">Presidential Suit</option>
                     <option value="Suits">Suits</option>
@@ -24,6 +38,12 @@
                     <option value="Deluxe">Deluxe</option>
                     <option value="Deluxe family Huts">Deluxe family Huts</option>
                 </select>
+                @error('roomType')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button"
+                        class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
 
@@ -75,15 +95,26 @@
                         </div>
                     </div>
                 </div>
+                @error('image')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button"
+                        class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label text-white">Bed Type</label>
                 <select  class="form-select form-select-lg" name="bedType" id="">
-                    <option selected>Select one</option>
                     <option value="Kingsize">Kingsize</option>
                     <option value="Kingsize/Twinbed">Kingsize/Twinbed</option>
                 </select>
+                @error('bedType')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button"
+                        class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -95,6 +126,12 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
+                @error('capacity')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"> <button type="button"
+                        class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="row my-3">
                 <div class="border-bottom mb-2"><h4>Service Pannel</h4></div>
@@ -106,37 +143,37 @@
                         <label class="form-check-label" for="">Air Conditioner</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Wi-Fi" name='wifi'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-wifi'></i> Wi-Fi" name='wifi'
                             id="" />
                         <label class="form-check-label" for="">Wi-Fi</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Tea/Coffee Maker" name='Tea/Coffee Maker'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-mug-hot'></i> Tea/Coffee Maker" name='teaCoffeeMaker'
                             id="" />
                         <label class="form-check-label" for=""> Tea/Coffee Maker</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="IN Room Safe" name='inRoomSafe'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-vault'></i> IN Room Safe" name='inRoomSafe'
                             id="" />
                         <label class="form-check-label" for=""> IN Room Safe</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Purified Water" name='purifiedWater'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-bottle-water'></i> Purified Water" name='purifiedWater'
                             id="" />
                         <label class="form-check-label" for="">Purified Water </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Workplace" name='workplace'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-brands fa-uncharted'></i> Workplace" name='workplace'
                             id="" />
                         <label class="form-check-label" for="">Workplace </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Bathtub" name='bathtub'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-bath'></i> Bathtub" name='bathtub'
                             id="" />
                         <label class="form-check-label" for="">Bathtub</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Iron" name='iron'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-shirt'></i> Iron" name='iron'
                             id="" />
                         <label class="form-check-label" for="">Iron</label>
                     </div>
@@ -146,42 +183,42 @@
                 <div class="col-lg-6">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox"
-                            value="<i class='fa-regular fa-tv'></i> Flat-screen TV" name='tv'
+                            value="<i class='fa-solid fa-tv'></i> Flat-screen TV" name='tv'
                             id="" />
                         <label class="form-check-label" for="">Flat-screen TV</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Rain Shower" name='rainShower'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-shower'></i> Rain Shower" name='rainShower'
                             id="" />
                         <label class="form-check-label" for="">Rain Shower</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Wardrobe" name='wardrobe'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-door-closed'></i> Wardrobe" name='wardrobe'
                             id="" />
                         <label class="form-check-label" for=""> Wardrobe</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Mini-bar" name='miniBar'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-champagne-glasses'></i> Mini-bar" name='miniBar'
                             id="" />
                         <label class="form-check-label" for=""> Mini-bar</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Living Space" name='livingSpace'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-person-shelter'></i> Living Space" name='livingSpace'
                             id="" />
                         <label class="form-check-label" for="">Living Space</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Fruit Basket" name='fruit'
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-basket-shopping'></i> Fruit Basket" name='fruit'
                             id="" />
                         <label class="form-check-label" for="">Fruit Basket</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Refregerator" name="refregerator"
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-door-closed'></i> Refregerator" name="refrigerator"
                             id="" />
                         <label class="form-check-label" for="">Refregerator</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Hair Dryer" name="hairDryer"
+                        <input class="form-check-input" type="checkbox" value="<i class='fa-solid fa-wind'></i> Hair Dryer" name="hairDryer"
                             id="" />
                         <label class="form-check-label" for="">Hair Dryer</label>
                     </div>

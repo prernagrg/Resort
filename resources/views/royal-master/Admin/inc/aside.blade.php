@@ -147,7 +147,7 @@
           </a>
         </li>
         <li class="menu-item">
-          <a href="/admin/index" class="menu-link">
+          <a href="{{route('room.index')}}" class="menu-link">
             <div data-i18n="Notifications">Manage Rooms</div>
           </a>
         </li>
